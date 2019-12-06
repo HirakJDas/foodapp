@@ -1,0 +1,124 @@
+.ProductOverview {
+  background: url("../../assets/image1.jpg");
+  width: 100%;
+  height: 600px;
+}
+.ProductSection {
+  background: url("../../assets/image1.jpg");
+  width: 100%;
+  height: 600px;
+}
+
+.FoodContent {
+  width: 100%;
+  text-align: center;
+}
+.Options {
+  background-color: white;
+  text-align: center;
+  padding: 16px;
+  margin: 72px 10px;
+  height: 400px;
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+.Cart {
+  background-color: white;
+  text-align: center;
+  padding: 16px;
+  margin: 8px;
+  height: 400px;
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+.ListItems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.OptionList {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin: 20px 10px;
+}
+.Image {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.OptionItemName {
+  margin: 10px 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.OptionList:hover,
+.OptionList:active {
+  background: blue;
+}
+
+.OptionListItem {
+  display: inline-block;
+}
+.CartList {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin: 20px 10px;
+}
+.CartList:hover,
+.CartList:active {
+  background: blue;
+}
+.CartListItem {
+  display: inline-block;
+}
+.CartItemName {
+  margin: 10px 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.Buttons {
+  text-align: center;
+  padding: 16px;
+  margin: 8px;
+  display: inline-block;
+  width: 20%;
+  vertical-align: middle;
+}
+.AddtoCartBtn {
+  font-size: 12px;
+  width: 150px;
+  display: block;
+  text-align: center;
+  background: orange;
+  color: white;
+  margin: 10px 20px;
+  padding: 16px;
+  box-shadow: 1px 2px 2px black;
+  border-radius: 8px;
+}
+.RemoveBtn {
+  font-size: 12px;
+  width: 150px;
+  margin: 10px 20px;
+  padding: 16px;
+  display: block;
+  text-align: center;
+  background: orange;
+  color: white;
+  box-shadow: 1px 2px 2px black;
+  border-radius: 8px;
+}
+.EmptyList {
+  margin: 50% 10px;
+}
