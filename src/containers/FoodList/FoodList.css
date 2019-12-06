@@ -1,10 +1,10 @@
 .ProductOverview {
   background: url("../../assets/image1.jpg");
   width: 100%;
-  height: 600px;
+  height: 500px;
 }
 .ProductSection {
-  background: url("../../assets/image1.jpg");
+  background: url("../../assets/image6.jpg");
   width: 100%;
   height: 600px;
 }
@@ -18,7 +18,17 @@
   text-align: center;
   padding: 16px;
   margin: 72px 10px;
-  height: 400px;
+  height: 500px;
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+.CartSection{
+  background-color: white;
+  text-align: center;
+  height: 500px;
   width: 30%;
   display: inline-block;
   vertical-align: middle;
@@ -26,16 +36,12 @@
   border: 1px solid black;
 }
 .Cart {
-  background-color: white;
   text-align: center;
-  padding: 16px;
-  margin: 8px;
-  height: 400px;
-  width: 30%;
+  width: 80%;
+  height: 450px;
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  border: 1px solid black;
 }
 .ListItems {
   list-style: none;
@@ -51,16 +57,23 @@
 .Image {
   display: inline-block;
   height: 50px;
-  width: 50px;
+  width: 15%;
   border-radius: 50%;
   vertical-align: middle;
 }
 .OptionItemName {
   margin: 10px 20px;
   display: inline-block;
+  width: 30%;
   vertical-align: middle;
 }
-
+.OptionItemPrice {
+  text-align: right;
+  right: 0;
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+}
 .OptionList:hover,
 .OptionList:active {
   background: blue;
@@ -84,6 +97,14 @@
 }
 .CartItemName {
   margin: 10px 20px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+}
+.CartItemPrice {
+  text-align: right;
+  right: 0;
+  width: 30%;
   display: inline-block;
   vertical-align: middle;
 }
@@ -121,4 +142,26 @@
 }
 .EmptyList {
   margin: 50% 10px;
+}
+
+.PriceSection{
+  background: blue;
+  width: 100%;
+  display: block;
+  height: 50px;
+}
+.TotalPrice{
+  color: white;
+  text-align: start;
+  margin: 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+}
+.TotalAmount{
+  color: white;
+  margin: 0 20px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10%;
 }

@@ -17,7 +17,8 @@ class FoodList extends Component {
         btnEnable: false,
         index: "",
         selectOptionItem: false,
-        selectCartItem: false
+        selectCartItem: false,
+        totalPrice: null
     }
     selectOption = (index) => {
         this.setState({ index: index, btnEnable: true, selectOptionItem: true });
@@ -37,9 +38,15 @@ class FoodList extends Component {
 
         const updateCart = [...this.state.cart];
         const updatedCart = updateCart.concat(newCart);
+        let totalPrice = 0;
+        // totalPrice = totalPrice + updatedCart.price;
+        updatedCart.map(item => {
+            totalPrice = totalPrice + item.price;
+            return totalPrice;
+        });
 
 
-        this.setState({ options: updateAvailableOption, cart: updatedCart, index: "", selectOptionItem: false, selectCartItem: false });
+        this.setState({ options: updateAvailableOption, cart: updatedCart, index: "", selectOptionItem: false, selectCartItem: false, totalPrice: totalPrice });
 
     }
 
@@ -50,17 +57,22 @@ class FoodList extends Component {
         const newOption = [];
         const updateOption = [...this.state.options];
         let updatedOptions = [];
-
+        let totalAmount = this.state.totalPrice;
         if (updateCart !== 0) {
             const item = updateCart[index];
 
+
+            totalAmount = totalAmount - item.price;
             updateCart.splice(index, 1);
 
             newOption.push(item);
             updatedOptions = updateOption.concat(newOption);
 
+            // totalPrice = totalPrice + updatedCart.price;
+
+
         }
-        this.setState({ options: updatedOptions, cart: updateCart, index: "", selectOptionItem: false, selectCartItem: false });
+        this.setState({ options: updatedOptions, cart: updateCart, index: "", selectOptionItem: false, selectCartItem: false, totalPrice: totalAmount });
 
     }
 
@@ -91,8 +103,7 @@ class FoodList extends Component {
                             height="100px"
                             alt="Nothing" />
                         <h4 className={classes.OptionItemName}>{item.name}</h4>
-                        
-
+                        <h4 className={classes.OptionItemPrice}>${item.price}</h4>
 
                     </div>
                 </li>
@@ -116,7 +127,6 @@ class FoodList extends Component {
         } else {
 
             const list = rightArray.map((item, index) => {
-
                 return <li className={classes.CartList} key={item.id} onClick={() => {
                     this.selectCartItem(index);
                 }}>
@@ -128,6 +138,7 @@ class FoodList extends Component {
                             height="100px"
                             alt="Nothing" />
                         <h4 className={classes.CartItemName}>{item.name}</h4>
+                        <h4 className={classes.CartItemPrice}>${item.price}</h4>
 
                     </div>
                 </li>
@@ -178,9 +189,16 @@ class FoodList extends Component {
                                 disabled={!this.state.btnEnable || !this.state.cart.length}
                             >{removeButton}</button>
                         </div>
-                        <div className={classes.Cart}>
-                            <ul className={classes.ListItems}>{rightItemList}</ul>
+                        <div className={classes.CartSection}>
+                            <div className={classes.Cart}>
+                                <ul className={classes.ListItems}>{rightItemList}</ul>
+                            </div>
+                            <div className={classes.PriceSection}>
+                                <h4 className={classes.TotalPrice}>Total price</h4>
+                                <h4 className={classes.TotalAmount}>${this.state.totalPrice}</h4>
+                            </div>
                         </div>
+
                     </div>
 
                 </section>
